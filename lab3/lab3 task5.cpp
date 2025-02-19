@@ -1,0 +1,45 @@
+#include<iostream>
+using namespace std;
+class Employee{
+	string name;
+	int m_salary;
+	float taxPercentage;
+	public:
+		void get_data()
+		{
+			string n;
+			int s;
+			float tp;
+			cout<<"Name: ";
+			cin>>n;
+			name=n;
+			cout<<"salary: ";
+			cin>>s;
+			m_salary=s;
+			cout<<"tax percentage: ";
+			cin>>tp;
+			taxPercentage=tp;
+		}
+		void salary_after_tax()
+		{
+			cout<<"reamaining salary after tax reduction: Rs."<<(m_salary-(m_salary*(taxPercentage/100)))<<endl;
+		}
+		void update_tax_percentage()
+		{
+			float upd;
+			cout<<"enter updated tax percentage: ";
+			cin>>upd;
+			taxPercentage=upd;
+			cout<<"remaining salary after updated tax percentage reduction:  Rs."<<m_salary-(m_salary*(upd/100));
+			
+		}
+};
+int main()
+{
+	Employee e1;
+	cout<<"enter data for employee 1:"<<endl;
+	e1.get_data();
+	e1.salary_after_tax();
+	e1.update_tax_percentage();
+	
+}
